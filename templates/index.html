@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet/less" type="text/css"
+          href="{{ url_for('static', filename='style.less') }}">
+    <script src="{{ url_for('static', filename='vendor/less.min.js') }}"></script>
+    <title>PyDeck</title>
+</head>
+<body>
+{% block body %}{% endblock %}
+</body>
+<script data-main="{{ url_for('static', filename='js/main.js') }}"
+        src="{{ url_for('static', filename='vendor/require.js') }}">
+</script>

@@ -1,0 +1,30 @@
+{
+  "name": "mydeck",
+  "authors": [
+    "Joaquin A. Rodriguez Huerta <jrhuerta@alayacare.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "^2.1.22",
+    "less": "^2.6.0",
+    "jquery": "^2.2.0",
+    "bootstrap": "^3.3.6",
+    "underscore": "^1.8.3",
+    "backbone": "^1.2.3",
+    "jquery-ui": "jqueryui#^1.11.4"
+  }
+}
