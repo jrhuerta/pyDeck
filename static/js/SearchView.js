@@ -17,6 +17,7 @@ define([
             .autocomplete( "instance" )
                 ._renderItem = function( ul, item ) {
                     return $( "<li>" )
+                        .append("<img src='" + item.image_url + "'>")
                         .append( "<a>" + item.name + "<br>" + item.rules_text + "</a>" )
                         .appendTo( ul );
                 };
