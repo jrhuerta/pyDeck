@@ -72,5 +72,8 @@ venv
 # bower
 bower_components
 
+# npm
+node_modules
+
 # pycharm
 .idea
