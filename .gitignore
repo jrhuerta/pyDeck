@@ -67,6 +67,7 @@ target/
 
 # virtualenv
 env
+venv
 
 # bower
 bower_components
