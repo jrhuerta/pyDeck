@@ -1,10 +1,14 @@
 <div class="card {{#mana_colors this.mana_cost }}{{/mana_colors}}">
-    <span class="name">{{ this.name }}</span>
-    <span class="mana_cost">{{ this.mana_cost }}</span>
+    <span class="name pull-left">{{ this.name }}</span>
+    <span class="mana_cost pull-right">
+        {{#mana_cost this.mana_cost }}{{/mana_cost }}</span>
+    <div class="clearfix"></div>
     <span class="types">
         {{#each this.types }}
             {{ this }}
         {{/each }}
     </span>
-    <span class="rules_text">{{ this.rules_text }}</span>
+    <span class="rules_text">
+        {{#ruling_text this.rules_text }}{{/ruling_text }}
+    </span>
 </div>

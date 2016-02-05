@@ -12,6 +12,7 @@ define([
         el: null,
         template: null,
         results: null,
+        containerTag: '<div>',
 
         initialize: function () {
             this.template = hb.compile(search_template);
@@ -36,10 +37,11 @@ define([
         },
 
         renderSearchResults: function () {
-            this.results.each(function (item) {
-                var list = $('[role="results"]', this.el);
-                list.empty();
-                var el = $('<div>'),
+            var self = this;
+            var list = $('[role="results"]', self.el);
+            list.empty();
+            self.results.each(function (item) {
+                var el = $(self.containerTag),
                     c = new CardView({
                         el: el,
                         model: item

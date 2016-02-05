@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask_restful import Api, reqparse, Resource
-from functools import wraps
+from functools import partial, wraps
 import json
 from mtglib.gatherer_request import SearchRequest
 from mtglib.card_extractor import CardExtractor
@@ -10,9 +10,18 @@ app = Flask(__name__)
 api = Api(app)
 
 
+def nullable(factory, value):
+    if value is None or value == '':
+        return None
+    return factory(value)
+
+
 def parser_factory(**kwargs):
     p = reqparse.RequestParser()
     for name, args in kwargs.iteritems():
+        type_ = args.get('type', None)
+        if type_:
+            args['type'] = partial(nullable, type_)
         p.add_argument(name, **args)
     return p
 
@@ -38,7 +47,11 @@ class Card(Resource):
         cmc=dict(type=int)
     )
     def get(self, **kwargs):
-        return kwargs
+        request = SearchRequest(kwargs)
+        rv = []
+        for c in CardExtractor(request.url).cards:
+            rv.append(vars(c))
+        return rv
 
 api.add_resource(Card, '/api/card', endpoint='card_api')
 

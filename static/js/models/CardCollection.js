@@ -6,7 +6,7 @@ define([
     var CardCollection = Backbone.Collection.extend({
         model: CardModel,
 
-        _baseUrl: '/card',
+        _baseUrl: '/api/card',
         _query: null,
 
         url: function () {
