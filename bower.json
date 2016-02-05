@@ -29,6 +29,8 @@
     "text": "requirejs-text#^2.0.14",
     "handlebars": "^4.0.5",
     "mana": "git@github.com:andrewgioia/Mana.git#master",
-    "select2": "^4.0.1"
+    "select2": "^4.0.1",
+    "interact": "^1.2.6",
+    "pivottable": "^2.0.2"
   }
 }

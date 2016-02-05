@@ -6,7 +6,7 @@ define([
 ], function ($, Backbone, hb, card_template) {
 
     var CardView = Backbone.View.extend({
-
+        el: null,
         template: null,
         model: null,
 
@@ -15,7 +15,11 @@ define([
             this.render();
         },
 
-        render: function () {
+        render: function (el) {
+            this.el = el || this.el;
+            if (!this.el) {
+                return;
+            }
             $(this.el).html(this._template(this.model.toJSON()));
         }
 

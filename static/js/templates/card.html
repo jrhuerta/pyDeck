@@ -1,4 +1,7 @@
-<div class="card {{#mana_colors this.mana_cost }}{{/mana_colors}}">
+<div role="card" class="card {{#mana_colors this.mana_cost }}{{/mana_colors}}">
+    <img class="pull-left thumb" src="{{ this.image_url }}">
+    <span class="btn btn-success pull-right">Add</span>
+    <div class="clearfix"></div>
     <span class="name pull-left">{{ this.name }}</span>
     <span class="mana_cost pull-right">
         {{#mana_cost this.mana_cost }}{{/mana_cost }}</span>

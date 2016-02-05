@@ -50,7 +50,9 @@ class Card(Resource):
         request = SearchRequest(kwargs)
         rv = []
         for c in CardExtractor(request.url).cards:
-            rv.append(vars(c))
+            card = vars(c)
+            card['converted_mana_cost'] = len(card.get('mana_cost'))
+            rv.append(card)
         return rv
 
 api.add_resource(Card, '/api/card', endpoint='card_api')
