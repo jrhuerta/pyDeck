@@ -1,16 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>My Deck</title>
+
     <link rel="stylesheet/less" type="text/css"
           href="{{ url_for('static', filename='style.less') }}">
     <script src="{{ url_for('static', filename='vendor/less.min.js') }}"></script>
-    <title>PyDeck</title>
+    <!-- Custom styles for this template -->
+
 </head>
+
 <body>
-<input type="text" name="keyword" role="search" />
-{% block body %}{% endblock %}
-</body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">My Deck</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Deckbuilder</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container">
+    <div role="search"></div>
+
+
+
+    {% block body %}{% endblock %}
+
+</div><!-- /.container -->
+
+
 <script data-main="{{ url_for('static', filename='js/main.js') }}"
         src="{{ url_for('static', filename='vendor/require.js') }}">
 </script>
+</body>
+
+</html>

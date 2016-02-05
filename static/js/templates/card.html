@@ -1,0 +1,10 @@
+<div class="card {{#mana_colors this.mana_cost }}{{/mana_colors}}">
+    <span class="name">{{ this.name }}</span>
+    <span class="mana_cost">{{ this.mana_cost }}</span>
+    <span class="types">
+        {{#each this.types }}
+            {{ this }}
+        {{/each }}
+    </span>
+    <span class="rules_text">{{ this.rules_text }}</span>
+</div>
